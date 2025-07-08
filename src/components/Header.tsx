@@ -22,19 +22,29 @@ const Header = () => {
   return (
     <AppBar position="static" color="primary">
       <Toolbar sx={{ display: "flex", justifyContent: "space-between" }}>
-        <Typography variant="h6">{t("welcome")}</Typography>
+        <Box display="flex" alignItems="center" gap={4}>
+          <Typography variant="h6">{t("welcome")}</Typography>
+
+          <Box display="flex" gap={2}>
+            <Link to="/" style={{ textDecoration: "none" }}>
+              <Button color="inherit">Anasayfa</Button>
+            </Link>
+
+            <Link to="/favorites" style={{ textDecoration: "none" }}>
+              <Button color="inherit">Favoriler</Button>
+            </Link>
+          </Box>
+        </Box>
 
         <Box display="flex" alignItems="center" gap={2}>
           <Typography>{userName}</Typography>
 
-          {/* Sepetim Butonu */}
           <Link to="/cart" style={{ textDecoration: "none" }}>
             <Button variant="contained" color="secondary">
               Sepetim
             </Button>
           </Link>
 
-          {/* Dil Seçimi */}
           <IconButton onClick={() => changeLanguage("tr")} size="small">
             <img src={trFlag} alt="TR" width={24} />
           </IconButton>

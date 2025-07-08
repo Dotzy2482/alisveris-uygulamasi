@@ -4,6 +4,7 @@ import LoginPage from "../pages/LoginPage";
 import HomePage from "../pages/HomePage";
 import Header from "../components/Header";
 import CartPage from "../pages/CartPage";
+import FavoritesPage from "../pages/FavoritesPage";
 
 const AppRouter = () => {
   const [userName, setUserName] = useState<string | null>(null);
@@ -24,6 +25,7 @@ const AppRouter = () => {
         <Route path="/" element={userName ? <HomePage /> : <Navigate to="/login" />} />
         <Route path="/login" element={<LoginPage />} />
         <Route path="/cart" element={<CartPage />} />
+        <Route path="/favorites" element={<FavoritesPage />} />
       </Routes>
     </>
   );
