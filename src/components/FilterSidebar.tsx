@@ -1,16 +1,5 @@
 import React from "react";
-import {
-  Box,
-  Typography,
-  TextField,
-  FormControl,
-  InputLabel,
-  Select,
-  MenuItem,
-  Slider,
-  Stack,
-} from "@mui/material";
-import { useTranslation } from "react-i18next";
+import { Typography, TextField, FormControl, InputLabel, Select, MenuItem, Slider, Stack, Paper } from "@mui/material";
 
 interface Props {
   searchTerm: string;
@@ -38,8 +27,20 @@ const FilterSidebar: React.FC<Props> = ({
   };
 
   return (
-    <Box width="250px" pr={3}>
-      <Typography variant="h6" gutterBottom>Filtrele</Typography>
+    <Paper
+      elevation={3}
+      sx={{
+        width: "250px",
+        p: 3,
+        borderRadius: "12px",
+        backgroundColor: "#fefefe",
+        boxShadow: "0 2px 10px rgba(0, 0, 0, 0.1)",
+        height: "fit-content",
+      }}
+    >
+      <Typography variant="h6" gutterBottom>
+        Filtrele
+      </Typography>
 
       <TextField
         label="Ürün Ara"
@@ -96,7 +97,7 @@ const FilterSidebar: React.FC<Props> = ({
           }}
         />
       </Stack>
-    </Box>
+    </Paper>
   );
 };
 

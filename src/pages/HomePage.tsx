@@ -3,10 +3,10 @@ import { Box, Grid } from "@mui/material";
 import { products } from "../utils/products";
 import ProductCard from "../components/ProductCard";
 import FilterSidebar from "../components/FilterSidebar";
-import { useCart } from "../context/CartContext"; // EKLENDİ
+import { useCart } from "../context/CartContext";
 
 const HomePage = () => {
-  const { addToCart } = useCart(); // EKLENDİ
+  const { addToCart } = useCart();
 
   const [priceRange, setPriceRange] = useState<number[]>([0, 2000]);
   const [searchTerm, setSearchTerm] = useState("");
@@ -19,21 +19,22 @@ const HomePage = () => {
     const matchesSearch = product.name.toLowerCase().includes(searchTerm.toLowerCase());
     const matchesMin = product.price >= priceRange[0];
     const matchesMax = product.price <= priceRange[1];
-
     return matchesCategory && matchesSearch && matchesMin && matchesMax;
   });
 
   return (
-    <Box display="flex" p={3}>
-      <FilterSidebar
-        searchTerm={searchTerm}
-        onSearchChange={setSearchTerm}
-        selectedCategory={selectedCategory}
-        onCategoryChange={setSelectedCategory}
-        categories={uniqueCategories}
-        priceRange={priceRange}
-        onPriceRangeChange={setPriceRange}
-      />
+    <Box display="flex" px="45px" pt={3}>
+      <Box mr="46px">
+        <FilterSidebar
+          searchTerm={searchTerm}
+          onSearchChange={setSearchTerm}
+          selectedCategory={selectedCategory}
+          onCategoryChange={setSelectedCategory}
+          categories={uniqueCategories}
+          priceRange={priceRange}
+          onPriceRangeChange={setPriceRange}
+        />
+      </Box>
 
       <Box flex={1}>
         <Grid container spacing={2}>

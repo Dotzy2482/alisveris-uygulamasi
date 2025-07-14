@@ -8,15 +8,20 @@ import Button from "@mui/material/Button";
 import { useTranslation } from "react-i18next";
 import trFlag from "../assets/flags/tr.svg";
 import enFlag from "../assets/flags/en.svg";
-import { useUser } from "../context/UserContext";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom"; // YENİ
 
 const Header = () => {
   const { i18n, t } = useTranslation();
-  const { userName } = useUser();
+  const userName = localStorage.getItem("userName");
+  const navigate = useNavigate(); // YENİ
 
   const changeLanguage = (lng: "tr" | "en") => {
     i18n.changeLanguage(lng);
+  };
+
+  const handleLogout = () => {
+    localStorage.removeItem("userName");
+    navigate("/login");
   };
 
   return (
@@ -38,6 +43,14 @@ const Header = () => {
 
         <Box display="flex" alignItems="center" gap={2}>
           <Typography>{userName}</Typography>
+
+          <Button
+            variant="outlined"
+            color="inherit"
+            onClick={handleLogout}
+          >
+            Çıkış Yap
+          </Button>
 
           <Link to="/cart" style={{ textDecoration: "none" }}>
             <Button variant="contained" color="secondary">
