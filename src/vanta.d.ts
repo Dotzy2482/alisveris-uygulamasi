@@ -1,1 +1,4 @@
-declare module "vanta/dist/vanta.cells.min";
+declare module "vanta/dist/vanta.fog.min" {
+  const effect: any;
+  export default effect;
+}

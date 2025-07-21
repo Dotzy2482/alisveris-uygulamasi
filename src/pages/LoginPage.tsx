@@ -15,7 +15,7 @@ import {
 import { Visibility, VisibilityOff } from "@mui/icons-material";
 import { useNavigate } from "react-router-dom";
 import * as THREE from "three";
-import CELLS from "vanta/dist/vanta.cells.min";
+import FOG from "vanta/dist/vanta.fog.min";
 
 const LoginPage = () => {
   const [userName, setUserName] = useState("");
@@ -26,9 +26,8 @@ const LoginPage = () => {
   const navigate = useNavigate();
 
   const vantaRef = useRef<HTMLDivElement>(null);
-  const vantaEffect = useRef<any>(null); // useState yerine useRef
+  const vantaEffect = useRef<any>(null);
 
-  // Giriş yapmışsa yönlendir
   useEffect(() => {
     const user = localStorage.getItem("userName");
     if (user) {
@@ -36,16 +35,18 @@ const LoginPage = () => {
     }
   }, [navigate]);
 
-  // Vanta efekti başlat
   useEffect(() => {
     if (!vantaEffect.current && vantaRef.current) {
-      vantaEffect.current = CELLS({
+      vantaEffect.current = FOG({
         el: vantaRef.current,
         THREE,
-        color1: 0x0c8c8c,
-        color2: 0xffe735,
-        size: 1.5,
-        speed: 1.0,
+        highlightColor: 0xffc300,
+        midtoneColor: 0xff1f00,
+        lowlightColor: 0x2d00ff,
+        baseColor: 0xffebeb,
+        blurFactor: 0.6,
+        speed: 1,
+        zoom: 1,
       });
     }
 
@@ -53,7 +54,7 @@ const LoginPage = () => {
       vantaEffect.current?.destroy();
       vantaEffect.current = null;
     };
-  }, []); // sadece ilk renderda çalışır
+  }, []);
 
   const handleLogin = () => {
     if (userName.trim() && password.trim()) {
@@ -92,13 +93,20 @@ const LoginPage = () => {
           sx={{
             padding: 4,
             width: 350,
-            backdropFilter: "blur(10px)",
-            backgroundColor: "rgba(0, 0, 0, 0.4)",
-            borderRadius: 3,
-            color: "white",
-            boxShadow: "0 8px 32px 0 rgba(0, 0, 0, 0.37)",
+            borderRadius: "30px",
+            background: "rgba(255, 255, 255, 0.08)",
+            border: "1px solid rgba(255, 255, 255, 0.25)",
+            backdropFilter: "blur(20px)",
+            WebkitBackdropFilter: "blur(20px) saturate(180%)",
+            color: "#fff",
+            boxShadow: `
+              0 4px 16px 0 rgba(31, 38, 135, 0.2),
+              inset 0 1px 1px rgba(255, 255, 255, 0.08),
+              inset 0 -1px 1px rgba(0, 0, 0, 0.05)
+            `,
           }}
         >
+
           <Typography variant="h5" mb={3} textAlign="center" sx={{ color: "white" }}>
             Giriş Yap
           </Typography>
@@ -110,8 +118,24 @@ const LoginPage = () => {
             margin="normal"
             value={userName}
             onChange={(e) => setUserName(e.target.value)}
-            InputProps={{ style: { color: "white" } }}
-            InputLabelProps={{ style: { color: "#ccc" } }}
+            sx={{
+              input: { color: "white" },
+              label: { color: "#fff" },
+              "& .MuiOutlinedInput-root": {
+                background: "rgba(255,255,255,0.05)",
+                borderRadius: "12px",
+                "& fieldset": {
+                  borderColor: "rgba(255, 255, 255, 0.2)",
+                },
+                "&:hover fieldset": {
+                  borderColor: "rgba(255, 255, 255, 0.4)",
+                },
+                "&.Mui-focused fieldset": {
+                  borderColor: "rgba(255, 255, 255, 0.6)",
+                },
+              },
+            }}
+            InputLabelProps={{ style: { color: "#fff" } }}
           />
 
           <TextField
@@ -121,21 +145,43 @@ const LoginPage = () => {
             margin="normal"
             value={password}
             onChange={(e) => setPassword(e.target.value)}
+            sx={{
+              input: { color: "#fff" },
+              "& .MuiOutlinedInput-root": {
+                background: "rgba(255,255,255,0.05)",
+                borderRadius: "12px",
+                "& fieldset": {
+                  borderColor: "rgba(255, 255, 255, 0.2)",
+                },
+                "&:hover fieldset": {
+                  borderColor: "rgba(255, 255, 255, 0.4)",
+                },
+                "&.Mui-focused fieldset": {
+                  borderColor: "rgba(255, 255, 255, 0.6)",
+                },
+              },
+            }}
+            InputLabelProps={{
+              sx: {
+                color: "#fff",
+                "&.Mui-focused": {
+                  color: "#fff",
+                },
+              },
+            }}
             InputProps={{
-              style: { color: "white" },
               endAdornment: (
                 <InputAdornment position="end">
                   <IconButton onClick={togglePasswordVisibility} edge="end">
                     {showPassword ? (
-                      <VisibilityOff sx={{ color: "white" }} />
+                      <VisibilityOff sx={{ color: "#fff" }} />
                     ) : (
-                      <Visibility sx={{ color: "white" }} />
+                      <Visibility sx={{ color: "#fff" }} />
                     )}
                   </IconButton>
                 </InputAdornment>
               ),
             }}
-            InputLabelProps={{ style: { color: "#ccc" } }}
           />
 
           <FormControlLabel
@@ -143,26 +189,34 @@ const LoginPage = () => {
               <Checkbox
                 checked={rememberMe}
                 onChange={(e) => setRememberMe(e.target.checked)}
-                sx={{ color: "#ccc" }}
+                sx={{ color: "#fff" }}
               />
             }
             label="Beni Hatırla"
-            sx={{ color: "#ccc", mt: 1 }}
+            sx={{ color: "#fff", mt: 1 }}
           />
 
           <Button
+            onClick={handleLogin}
             fullWidth
             variant="contained"
             sx={{
               mt: 2,
-              background: "linear-gradient(to right, #6c8e00, #9dbd1c)",
+              background: "rgba(255, 255, 255, 0.15)",
               color: "#fff",
-              fontWeight: "bold",
+              textTransform: "none",
+              fontWeight: 500,
+              border: "1px solid rgba(255, 255, 255, 0.3)",
+              backdropFilter: "blur(12px)",
+              WebkitBackdropFilter: "blur(12px)",
+              boxShadow: "0 4px 20px rgba(255, 255, 255, 0.1)",
+              textShadow: "0 1px 2px rgba(0, 0, 0, 0.3)",
               '&:hover': {
-                background: "linear-gradient(to right, #5a7600, #8cab17)",
+                background: "rgba(255, 255, 255, 0.25)",
+                boxShadow: "0 6px 30px rgba(255, 255, 255, 0.2)",
+                transform: "scale(1.02)",
               },
             }}
-            onClick={handleLogin}
           >
             GİRİŞ YAP
           </Button>
