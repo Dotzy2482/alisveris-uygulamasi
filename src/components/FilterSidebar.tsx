@@ -1,5 +1,15 @@
 import React from "react";
-import { Typography, TextField, FormControl, InputLabel, Select, MenuItem, Slider, Stack, Paper } from "@mui/material";
+import {
+  Typography,
+  TextField,
+  FormControl,
+  InputLabel,
+  Select,
+  MenuItem,
+  Slider,
+  Stack,
+  Paper,
+} from "@mui/material";
 
 interface Props {
   searchTerm: string;
@@ -28,17 +38,25 @@ const FilterSidebar: React.FC<Props> = ({
 
   return (
     <Paper
-      elevation={3}
+      elevation={0}
       sx={{
         width: "250px",
         p: 3,
-        borderRadius: "12px",
-        backgroundColor: "#fefefe",
-        boxShadow: "0 2px 10px rgba(0, 0, 0, 0.1)",
+        borderRadius: "20px",
+        background: "rgba(255, 255, 255, 0.08)",
+        border: "1px solid rgba(255, 255, 255, 0.25)",
+        backdropFilter: "blur(20px)",
+        WebkitBackdropFilter: "blur(20px) saturate(180%)",
+        color: "#fff",
+        boxShadow: `
+          0 4px 16px 0 rgba(31, 38, 135, 0.2),
+          inset 0 1px 1px rgba(255, 255, 255, 0.08),
+          inset 0 -1px 1px rgba(0, 0, 0, 0.05)
+        `,
         height: "fit-content",
       }}
     >
-      <Typography variant="h6" gutterBottom>
+      <Typography variant="h6" gutterBottom sx={{ color: "#fff" }}>
         Filtrele
       </Typography>
 
@@ -48,15 +66,56 @@ const FilterSidebar: React.FC<Props> = ({
         fullWidth
         value={searchTerm}
         onChange={(e) => onSearchChange(e.target.value)}
-        sx={{ mb: 2 }}
+        sx={{
+          mb: 2,
+          input: { color: "white" },
+          "& .MuiOutlinedInput-root": {
+            background: "rgba(255,255,255,0.05)",
+            borderRadius: "12px",
+            "& fieldset": {
+              borderColor: "rgba(255, 255, 255, 0.2)",
+            },
+            "&:hover fieldset": {
+              borderColor: "rgba(255, 255, 255, 0.4)",
+            },
+            "&.Mui-focused fieldset": {
+              borderColor: "rgba(255, 255, 255, 0.6)",
+            },
+          },
+        }}
+        InputLabelProps={{ sx: { color: "#fff" } }}
       />
-
+      
       <FormControl fullWidth sx={{ mb: 2 }}>
-        <InputLabel>Kategori</InputLabel>
+        <InputLabel sx={{ color: "#fff" }}>Kategori</InputLabel>
         <Select
           value={selectedCategory}
-          label="Kategori"
           onChange={(e) => onCategoryChange(e.target.value)}
+          label="Kategori"
+          sx={{
+            color: "#fff",
+            background: "rgba(255,255,255,0.05)",
+            borderRadius: "12px",
+            "& .MuiOutlinedInput-notchedOutline": {
+              borderColor: "rgba(255,255,255,0.2)",
+            },
+            "&:hover .MuiOutlinedInput-notchedOutline": {
+              borderColor: "rgba(255,255,255,0.4)",
+            },
+            "&.Mui-focused .MuiOutlinedInput-notchedOutline": {
+              borderColor: "rgba(255,255,255,0.6)",
+            },
+          }}
+          MenuProps={{
+            PaperProps: {
+              sx: {
+                backgroundColor: "#ffffff", // Açılır menü opak beyaz
+                color: "#000000",           // Siyah yazı
+                borderRadius: "12px",
+                boxShadow: "0 4px 12px rgba(0,0,0,0.15)",
+              },
+            },
+          }}
         >
           <MenuItem value="">Tümü</MenuItem>
           {categories.map((cat) => (
@@ -67,14 +126,19 @@ const FilterSidebar: React.FC<Props> = ({
         </Select>
       </FormControl>
 
-      <Typography gutterBottom>Fiyat Aralığı</Typography>
+      <Typography gutterBottom sx={{ color: "#fff" }}>
+        Fiyat Aralığı
+      </Typography>
       <Slider
         value={priceRange}
         onChange={handleSliderChange}
         valueLabelDisplay="auto"
         min={0}
         max={2000}
-        sx={{ mb: 2 }}
+        sx={{
+          mb: 2,
+          color: "#fff",
+        }}
       />
 
       <Stack direction="row" spacing={2}>
@@ -86,6 +150,24 @@ const FilterSidebar: React.FC<Props> = ({
             const val = Number(e.target.value);
             if (!isNaN(val)) onPriceRangeChange([val, priceRange[1]]);
           }}
+          InputProps={{ sx: { color: "#fff" } }}
+          sx={{
+            input: { color: "white" },
+            "& .MuiOutlinedInput-root": {
+              background: "rgba(255,255,255,0.05)",
+              borderRadius: "12px",
+              "& fieldset": {
+                borderColor: "rgba(255,255,255,0.2)",
+              },
+              "&:hover fieldset": {
+                borderColor: "rgba(255,255,255,0.4)",
+              },
+              "&.Mui-focused fieldset": {
+                borderColor: "rgba(255,255,255,0.6)",
+              },
+            },
+          }}
+          InputLabelProps={{ sx: { color: "#fff" } }}
         />
         <TextField
           label="Max"
@@ -95,6 +177,24 @@ const FilterSidebar: React.FC<Props> = ({
             const val = Number(e.target.value);
             if (!isNaN(val)) onPriceRangeChange([priceRange[0], val]);
           }}
+          InputProps={{ sx: { color: "#fff" } }}
+          sx={{
+            input: { color: "white" },
+            "& .MuiOutlinedInput-root": {
+              background: "rgba(255,255,255,0.05)",
+              borderRadius: "12px",
+              "& fieldset": {
+                borderColor: "rgba(255,255,255,0.2)",
+              },
+              "&:hover fieldset": {
+                borderColor: "rgba(255,255,255,0.4)",
+              },
+              "&.Mui-focused fieldset": {
+                borderColor: "rgba(255,255,255,0.6)",
+              },
+            },
+          }}
+          InputLabelProps={{ sx: { color: "#fff" } }}
         />
       </Stack>
     </Paper>

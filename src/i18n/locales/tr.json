@@ -1,8 +1,13 @@
 {
+  "welcome": "Hoşgeldiniz",
+  "cart": "Sepet",
+  "favorites": "Favoriler",
   "login": "Giriş Yap",
   "logout": "Çıkış Yap",
-  "welcome": "Hoş geldin",
-  "favorites": "Favorilerim",
-  "cart": "Sepet",
-  "buy": "Satın Al"
+  "search_placeholder": "Ürün ara...",
+  "total": "Toplam",
+  "confirmPurchase": "Satın Almayı Onayla",
+  "cancel": "Vazgeç",
+  "continueShopping": "Alışverişe Devam Et",
+  "clearCart": "Sepeti Temizle"
 }

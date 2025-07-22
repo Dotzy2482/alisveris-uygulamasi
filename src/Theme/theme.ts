@@ -4,8 +4,8 @@ const theme = createTheme({
   palette: {
     mode: "light",
     background: {
-      default: "#fff0f5", // Hafif pastel arka plan
-      paper: "rgba(255, 255, 255, 0.08)", // Glass morphism için yarı saydamlık
+      default: "transparent",
+      paper: "rgba(255, 255, 255, 0.08)",
     },
     primary: {
       main: "rgba(255, 255, 255, 0.15)",
@@ -20,30 +20,20 @@ const theme = createTheme({
     borderRadius: 20,
   },
   components: {
-    MuiPaper: {
-      styleOverrides: {
-        root: {
-          backgroundColor: "rgba(255, 255, 255, 0.08)",
-          border: "1px solid rgba(255, 255, 255, 0.25)",
-          backdropFilter: "blur(20px)",
-          WebkitBackdropFilter: "blur(20px) saturate(180%)",
-          borderRadius: "30px",
-          boxShadow: `
-            0 4px 20px rgba(31, 38, 135, 0.2),
-            inset 0 1px 1px rgba(255, 255, 255, 0.06),
-            inset 0 -1px 1px rgba(0, 0, 0, 0.05)
-          `,
-          color: "#fff",
-        },
-      },
-    },
     MuiTextField: {
       styleOverrides: {
         root: {
+          color: "#fff",
+          "& .MuiInputBase-root": {
+            color: "#fff",
+          },
           "& .MuiOutlinedInput-root": {
             backgroundColor: "rgba(255, 255, 255, 0.05)",
             borderRadius: 12,
             color: "#fff",
+            "& input": {
+              color: "#fff",
+            },
             "& fieldset": {
               borderColor: "rgba(255, 255, 255, 0.2)",
             },
@@ -55,27 +45,56 @@ const theme = createTheme({
             },
           },
           "& .MuiInputLabel-root": {
+            color: "#fff !important",
+          },
+        },
+      },
+    },
+
+    MuiSelect: {
+      styleOverrides: {
+        root: {
+          color: "#fff",
+        },
+        icon: {
+          color: "#fff",
+        },
+      },
+    },
+
+    MuiInputLabel: {
+      styleOverrides: {
+        root: {
+          color: "#fff !important",
+        },
+      },
+    },
+
+    MuiMenuItem: {
+      styleOverrides: {
+        root: {
+          color: "#000", // açılır menüde okunabilir siyah
+        },
+      },
+    },
+
+    MuiCheckbox: {
+      styleOverrides: {
+        root: {
+          color: "rgba(255, 255, 255, 0.8)",
+          "&.Mui-checked": {
             color: "#fff",
           },
         },
       },
     },
-    MuiCheckbox: {
-      styleOverrides: {
-        root: {
-          color: "rgba(255, 255, 255, 0.6)",
-          "&.Mui-checked": {
-            color: "rgba(255, 255, 255, 0.9)",
-          },
-        },
-      },
-    },
+
     MuiButton: {
       styleOverrides: {
         root: {
           background: "rgba(255, 255, 255, 0.15)",
           color: "#ffffff",
-          borderRadius: 12,
+          borderRadius: "20px",
           fontWeight: "bold",
           textTransform: "none",
           border: "1px solid rgba(255, 255, 255, 0.3)",
