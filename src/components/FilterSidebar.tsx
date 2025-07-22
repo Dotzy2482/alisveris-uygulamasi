@@ -10,6 +10,7 @@ import {
   Stack,
   Paper,
 } from "@mui/material";
+import { useTranslation } from "react-i18next";
 
 interface Props {
   searchTerm: string;
@@ -29,7 +30,9 @@ const FilterSidebar: React.FC<Props> = ({
   categories,
   priceRange,
   onPriceRangeChange,
+  
 }) => {
+  const { t } = useTranslation();
   const handleSliderChange = (_: Event, newValue: number | number[]) => {
     if (Array.isArray(newValue)) {
       onPriceRangeChange(newValue);
@@ -57,11 +60,11 @@ const FilterSidebar: React.FC<Props> = ({
       }}
     >
       <Typography variant="h6" gutterBottom sx={{ color: "#fff" }}>
-        Filtrele
+        {t("filter")}
       </Typography>
 
       <TextField
-        label="Ürün Ara"
+        label={t("searchPlaceholder")}
         variant="outlined"
         fullWidth
         value={searchTerm}
@@ -87,11 +90,11 @@ const FilterSidebar: React.FC<Props> = ({
       />
       
       <FormControl fullWidth sx={{ mb: 2 }}>
-        <InputLabel sx={{ color: "#fff" }}>Kategori</InputLabel>
+        <InputLabel sx={{ color: "#fff" }}>{t("category")}</InputLabel>
         <Select
           value={selectedCategory}
           onChange={(e) => onCategoryChange(e.target.value)}
-          label="Kategori"
+          label={t("category")}
           sx={{
             color: "#fff",
             background: "rgba(255,255,255,0.05)",
@@ -109,25 +112,25 @@ const FilterSidebar: React.FC<Props> = ({
           MenuProps={{
             PaperProps: {
               sx: {
-                backgroundColor: "#ffffff", // Açılır menü opak beyaz
-                color: "#000000",           // Siyah yazı
+                backgroundColor: "#ffffff", 
+                color: "#000000",           
                 borderRadius: "12px",
                 boxShadow: "0 4px 12px rgba(0,0,0,0.15)",
               },
             },
           }}
         >
-          <MenuItem value="">Tümü</MenuItem>
+          <MenuItem value="">{t("categories.all")}</MenuItem>
           {categories.map((cat) => (
             <MenuItem key={cat} value={cat}>
-              {cat}
+              {t(`categories.${cat}`)}
             </MenuItem>
           ))}
         </Select>
       </FormControl>
 
       <Typography gutterBottom sx={{ color: "#fff" }}>
-        Fiyat Aralığı
+        {t("priceRange")}
       </Typography>
       <Slider
         value={priceRange}
@@ -143,7 +146,7 @@ const FilterSidebar: React.FC<Props> = ({
 
       <Stack direction="row" spacing={2}>
         <TextField
-          label="Min"
+          label={t("min")}
           type="number"
           value={priceRange[0]}
           onChange={(e) => {
@@ -170,7 +173,7 @@ const FilterSidebar: React.FC<Props> = ({
           InputLabelProps={{ sx: { color: "#fff" } }}
         />
         <TextField
-          label="Max"
+          label={t("max")}
           type="number"
           value={priceRange[1]}
           onChange={(e) => {

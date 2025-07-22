@@ -1,6 +1,7 @@
 import React, { useEffect } from "react";
 import { Box, Typography, Avatar, Fade } from "@mui/material";
 import { Product } from "../utils/products";
+import { useTranslation } from "react-i18next";
 
 interface Props {
   visible: boolean;
@@ -9,6 +10,7 @@ interface Props {
 }
 
 const AddedToCartPreview: React.FC<Props> = ({ visible, items, onClose }) => {
+  const { t } = useTranslation();
   useEffect(() => {
     if (visible) {
       const timer = setTimeout(() => {
@@ -39,7 +41,7 @@ const AddedToCartPreview: React.FC<Props> = ({ visible, items, onClose }) => {
         }}
       >
         <Typography variant="subtitle1" sx={{ mb: 1, fontWeight: "bold" }}>
-          Sepete Eklendi
+          {t("addedToCart")}
         </Typography>
         {items.map((item) => (
           <Box key={item.id} display="flex" alignItems="center" mb={1}>

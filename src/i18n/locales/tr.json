@@ -1,13 +1,24 @@
 {
   "welcome": "Hoşgeldiniz",
-  "cart": "Sepet",
+  "user": "Kullanıcı",
+  "home": "Anasayfa",
   "favorites": "Favoriler",
-  "login": "Giriş Yap",
   "logout": "Çıkış Yap",
-  "search_placeholder": "Ürün ara...",
-  "total": "Toplam",
-  "confirmPurchase": "Satın Almayı Onayla",
-  "cancel": "Vazgeç",
-  "continueShopping": "Alışverişe Devam Et",
-  "clearCart": "Sepeti Temizle"
+  "cart": "Sepetim",
+  "searchPlaceholder": "Ürün Ara",
+  "category": "Kategori",
+  "priceRange": "Fiyat Aralığı",
+  "min": "Min",
+  "max": "Max",
+  "addToCart": "Sepete Ekle",
+  "addedToCart": "Sepete Eklendi",
+  "filter": "Filtrele",
+  "categories": {
+    "all": "Tümü",
+    "clothing": "Giyim",
+    "electronics": "Elektronik",
+    "accessories": "Aksesuar",
+    "home": "Ev",
+    "book": "Kitap"
+  }
 }

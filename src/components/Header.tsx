@@ -16,7 +16,7 @@ import ShoppingCartIcon from "@mui/icons-material/ShoppingCart";
 const Header = () => {
   const { i18n, t } = useTranslation();
   const navigate = useNavigate();
-  const userName = localStorage.getItem("userName") || "Kullanıcı";
+  const userName = localStorage.getItem("userName") || t("user");
 
   const changeLanguage = (lng: "tr" | "en") => {
     i18n.changeLanguage(lng);
@@ -28,23 +28,8 @@ const Header = () => {
   };
 
   return (
-    <AppBar
-      position="static"
-      elevation={0}
-      sx={{
-        background: "transparent",
-        boxShadow: "none",
-        pt: 2,
-        px: 4,
-      }}
-    >
-      <Toolbar
-        sx={{
-          justifyContent: "space-between",
-          flexWrap: "wrap",
-          px: 0,
-        }}
-      >
+    <AppBar position="static" elevation={0} sx={{ background: "transparent", boxShadow: "none", pt: 2, px: 4 }}>
+      <Toolbar sx={{ justifyContent: "space-between", flexWrap: "wrap", px: 0 }}>
         {/* Sol Baloncuk */}
         <Box
           sx={{
@@ -70,11 +55,11 @@ const Header = () => {
           </Typography>
 
           <Link to="/" style={{ textDecoration: "none" }}>
-            <Button sx={{ color: "#fff", textTransform: "none" }}>Anasayfa</Button>
+            <Button sx={{ color: "#fff", textTransform: "none" }}>{t("home")}</Button>
           </Link>
 
           <Link to="/favorites" style={{ textDecoration: "none" }}>
-            <Button sx={{ color: "#fff", textTransform: "none" }}>Favoriler</Button>
+            <Button sx={{ color: "#fff", textTransform: "none" }}>{t("favorites")}</Button>
           </Link>
         </Box>
 
@@ -104,7 +89,7 @@ const Header = () => {
             onClick={handleLogout}
             sx={{ color: "#fff", textTransform: "none" }}
           >
-            Çıkış Yap
+            {t("logout")}
           </Button>
 
           <Link to="/cart" style={{ textDecoration: "none" }}>
@@ -121,7 +106,7 @@ const Header = () => {
                 },
               }}
             >
-              Sepetim
+              {t("cart")}
             </Button>
           </Link>
 

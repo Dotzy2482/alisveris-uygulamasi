@@ -1,13 +1,24 @@
 {
   "welcome": "Welcome",
-  "cart": "Cart",
+  "user": "User",
+  "home": "Home",
   "favorites": "Favorites",
-  "login": "Login",
   "logout": "Logout",
-  "search_placeholder": "Search products...",
-  "total": "Total",
-  "confirmPurchase": "Confirm Purchase",
-  "cancel": "Cancel",
-  "continueShopping": "Continue Shopping",
-  "clearCart": "Clear Cart"
+  "cart": "My Cart",
+  "searchPlaceholder": "Search Product",
+  "category": "Category",
+  "priceRange": "Price Range",
+  "min": "Min",
+  "max": "Max",
+  "addToCart": "Add to Cart",
+  "addedToCart": "Added to Cart",
+  "filter": "Filter",
+  "categories": {
+    "all": "All",
+    "clothing": "Clothing",
+    "electronics": "Electronics",
+    "accessories": "Accessories",
+    "home": "Home",
+    "book": "Book"
+  }
 }

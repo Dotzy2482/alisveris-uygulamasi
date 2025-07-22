@@ -12,6 +12,7 @@ import FavoriteBorderIcon from "@mui/icons-material/FavoriteBorder";
 import FavoriteIcon from "@mui/icons-material/Favorite";
 import { Product } from "../utils/products";
 import { useFavorites } from "../context/FavoritesContext";
+import { useTranslation } from "react-i18next";
 
 interface Props {
   product: Product;
@@ -20,6 +21,7 @@ interface Props {
 
 const ProductCard: React.FC<Props> = ({ product, onAddToCart }) => {
   const { favorites, addToFavorites, removeFromFavorites } = useFavorites();
+  const { t } = useTranslation();
   const isFavorite = favorites.some((fav) => fav.id === product.id);
 
   const toggleFavorite = () => {
@@ -71,7 +73,7 @@ const ProductCard: React.FC<Props> = ({ product, onAddToCart }) => {
             },
           }}
         >
-          Sepete Ekle
+          {t("addToCart")}
         </Button>
       </CardContent>
     </Card>
