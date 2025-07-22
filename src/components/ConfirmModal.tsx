@@ -10,6 +10,8 @@ import {
   Button,
 } from "@mui/material";
 import { Product } from "../utils/products";
+import { useTranslation } from "react-i18next";
+
 
 interface ConfirmModalProps {
   open: boolean;
@@ -28,6 +30,9 @@ const ConfirmModal: React.FC<ConfirmModalProps> = ({
   onConfirm,
   onContinueShopping,
 }) => {
+  const { t } = useTranslation();
+
+
   return (
     <Dialog
       open={open}
@@ -43,7 +48,7 @@ const ConfirmModal: React.FC<ConfirmModalProps> = ({
       }}
     >
       <DialogTitle sx={{ fontWeight: "bold" }}>
-        Satın Almayı Onaylıyor musunuz?
+        {t("confirmPurchaseTitle")}
       </DialogTitle>
 
       <DialogContent dividers>
@@ -61,7 +66,7 @@ const ConfirmModal: React.FC<ConfirmModalProps> = ({
           </Box>
         ))}
         <Divider sx={{ my: 2, borderColor: "rgba(255,255,255,0.3)" }} />
-        <Typography variant="h6">Toplam: {total.toFixed(2)} ₺</Typography>
+        <Typography variant="h6">{t("total")}: {total.toFixed(2)} ₺</Typography>
       </DialogContent>
 
       <DialogActions>
@@ -75,7 +80,7 @@ const ConfirmModal: React.FC<ConfirmModalProps> = ({
             },
           }}
         >
-          Vazgeç
+          {t("cancel")}
         </Button>
 
         <Button
@@ -89,7 +94,7 @@ const ConfirmModal: React.FC<ConfirmModalProps> = ({
             },
           }}
         >
-          Alışverişe Devam Et
+          {t("continueShopping")}
         </Button>
 
         <Button
@@ -104,7 +109,7 @@ const ConfirmModal: React.FC<ConfirmModalProps> = ({
             },
           }}
         >
-          Satın Almayı Onayla
+          {t("confirmPurchase")}
         </Button>
       </DialogActions>
     </Dialog>

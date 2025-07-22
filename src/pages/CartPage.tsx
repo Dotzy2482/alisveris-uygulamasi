@@ -11,11 +11,13 @@ import {
   Snackbar,
   Alert,
 } from "@mui/material";
+import { useTranslation } from "react-i18next";
 
 import * as THREE from "three";
 import FOG from "vanta/dist/vanta.fog.min";
 
 const CartPage = () => {
+  const { t } = useTranslation();
   const { cart, removeFromCart, clearCart, updateQuantity } = useCart();
   const [snackbarOpen, setSnackbarOpen] = useState(false);
   const [dialogOpen, setDialogOpen] = useState(false);
@@ -76,13 +78,13 @@ const CartPage = () => {
         }}
       />
 
-      <Box sx={{ px: "45px", pt: 4 }}>
+      <Box sx={{ px: "65px", pt: 6 }}>
         <Typography variant="h4" gutterBottom sx={{ color: "#fff" }}>
-          Sepetim
+          {t("cartTitle")}
         </Typography>
 
         {cart.length === 0 ? (
-          <Typography sx={{ color: "#fff" }}>Sepetiniz boş.</Typography>
+          <Typography sx={{ color: "#fff" }}>{t("cartEmpty")}</Typography>
         ) : (
           <>
             <List disablePadding>
@@ -185,7 +187,7 @@ const CartPage = () => {
 
             <Box mt={3} display="flex" justifyContent="space-between" alignItems="center">
               <Typography variant="h6" sx={{ color: "#fff" }}>
-                Toplam: {total.toFixed(2)} ₺
+                 {t("total")}: {total.toFixed(2)} ₺
               </Typography>
               <Box>
                 <Button
@@ -202,7 +204,7 @@ const CartPage = () => {
                     },
                   }}
                 >
-                  Satın Al
+                  {t("confirmPurchase")}
                 </Button>
                 <Button
                   variant="contained"
@@ -216,7 +218,7 @@ const CartPage = () => {
                     },
                   }}
                 >
-                  Sepeti Temizle
+                  {t("clearCart")}
                 </Button>
               </Box>
             </Box>
@@ -234,7 +236,7 @@ const CartPage = () => {
                   },
                 }}
               >
-                🛍️ Alışverişe Devam Et
+                🛍️ {t("continueShopping")}
               </Button>
             </Box>
           </>
@@ -263,7 +265,7 @@ const CartPage = () => {
               boxShadow: "0 4px 12px rgba(0, 0, 0, 0.2)",
             }}
           >
-            Satın alma işlemi başarıyla gerçekleşti!
+            {t("purchaseSuccess")}
           </Alert>
         </Snackbar>
       </Box>
