@@ -16,6 +16,7 @@ import { Visibility, VisibilityOff } from "@mui/icons-material";
 import { useNavigate } from "react-router-dom";
 import * as THREE from "three";
 import FOG from "vanta/dist/vanta.fog.min";
+import { useTranslation } from "react-i18next";
 
 const LoginPage = () => {
   const [userName, setUserName] = useState("");
@@ -24,6 +25,7 @@ const LoginPage = () => {
   const [rememberMe, setRememberMe] = useState(false);
   const [error, setError] = useState(false);
   const navigate = useNavigate();
+  const { t, i18n } = useTranslation();
 
   const vantaRef = useRef<HTMLDivElement>(null);
   const vantaEffect = useRef<any>(null);
@@ -78,6 +80,44 @@ const LoginPage = () => {
         overflow: "hidden",
       }}
     >
+      {/* Dil Baloncukları */}
+      <Box
+        sx={{
+          position: "absolute",
+          top: 20,
+          right: 20,
+          display: "flex",
+          gap: 1.5,
+          zIndex: 2,
+        }}
+      >
+        {["tr", "en"].map((lng) => (
+          <Button
+            key={lng}
+            onClick={() => i18n.changeLanguage(lng)}
+            sx={{
+              minWidth: 0,
+              padding: "8px",
+              borderRadius: "50%",
+              backgroundColor: "rgba(255, 255, 255, 0.12)",
+              border: "1px solid rgba(255,255,255,0.3)",
+              backdropFilter: "blur(8px)",
+              transition: "all 0.3s ease",
+              "&:hover": {
+                backgroundColor: "rgba(255,255,255,0.2)",
+              },
+            }}
+          >
+            <Box
+              component="img"
+              src={require(`../assets/flags/${lng}.svg`)}
+              alt={lng}
+              sx={{ width: 24, height: 24 }}
+            />
+          </Button>
+        ))}
+      </Box>
+
       <Box
         position="absolute"
         top={0}
@@ -106,13 +146,12 @@ const LoginPage = () => {
             `,
           }}
         >
-
           <Typography variant="h5" mb={3} textAlign="center" sx={{ color: "white" }}>
-            Giriş Yap
+            {t("login")}
           </Typography>
 
           <TextField
-            label="Kullanıcı Adı"
+            label={t("username")}
             variant="outlined"
             fullWidth
             margin="normal"
@@ -139,7 +178,7 @@ const LoginPage = () => {
           />
 
           <TextField
-            label="Şifre"
+            label={t("password")}
             type={showPassword ? "text" : "password"}
             fullWidth
             margin="normal"
@@ -192,7 +231,7 @@ const LoginPage = () => {
                 sx={{ color: "#fff" }}
               />
             }
-            label="Beni Hatırla"
+            label={t("rememberMe")}
             sx={{ color: "#fff", mt: 1 }}
           />
 
@@ -218,14 +257,25 @@ const LoginPage = () => {
               },
             }}
           >
-            GİRİŞ YAP
+            {t("loginButton")}
           </Button>
         </Paper>
       </Box>
 
       <Snackbar open={error} autoHideDuration={3000} onClose={handleClose}>
-        <Alert severity="error" onClose={handleClose}>
-          Kullanıcı adı ve şifre gereklidir.
+        <Alert
+          severity="error"
+          onClose={handleClose}
+          sx={{
+            backgroundColor: "rgba(252, 0, 0, 0.15)",
+            color: "#fff",
+            border: "1px solid rgba(255, 255, 255, 0.3)",
+            backdropFilter: "blur(10px)",
+            boxShadow: "0 4px 20px rgba(0,0,0,0.3)",
+            borderRadius: "16px",
+          }}
+        >
+          {t("loginError")}
         </Alert>
       </Snackbar>
     </Box>

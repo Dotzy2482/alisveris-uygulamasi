@@ -24,6 +24,12 @@
   "continueShopping": "Alışverişe Devam Et",
   "purchaseSuccess": "Satın alma işlemi başarıyla gerçekleşti!",
   "confirmPurchaseTitle": "Satın Almayı Onaylıyor musunuz?",
+  "login": "Giriş Yap",
+  "username": "Kullanıcı Adı",
+  "password": "Şifre",
+  "rememberMe": "Beni Hatırla",
+  "loginButton": "GİRİŞ YAP",
+  "loginError": "Kullanıcı adı ve şifre gereklidir.",
   "categories": {
     "all": "Tümü",
     "clothing": "Giyim",

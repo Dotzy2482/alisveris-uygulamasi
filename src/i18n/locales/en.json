@@ -24,6 +24,12 @@
   "continueShopping": "Continue Shopping",
   "purchaseSuccess": "Purchase completed successfully!",
   "confirmPurchaseTitle": "Do you confirm the purchase?",
+  "login": "Login",
+  "username": "Username",
+  "password": "Password",
+  "rememberMe": "Remember Me",
+  "loginButton": "LOGIN",
+  "loginError": "Username and password are required.",
   "categories": {
     "all": "All",
     "clothing": "Clothing",
