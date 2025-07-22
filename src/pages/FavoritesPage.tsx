@@ -5,9 +5,11 @@ import ProductCard from "../components/ProductCard";
 import { Product } from "../utils/products";
 import * as THREE from "three";
 import FOG from "vanta/dist/vanta.fog.min";
+import { useTranslation } from "react-i18next";
 
 const FavoritesPage = () => {
   const { favorites } = useFavorites();
+  const { t } = useTranslation();
 
   const vantaRef = useRef<HTMLDivElement>(null);
   const vantaEffect = useRef<any>(null);
@@ -49,18 +51,13 @@ const FavoritesPage = () => {
       />
 
       {/* İçerik */}
-      <Box
-        sx={{
-          px: "45px",
-          pt: 4,
-        }}
-      >
+      <Box sx={{ px: "65px", pt: 6 }}>
         <Typography variant="h4" gutterBottom sx={{ color: "#fff" }}>
-          Favorilerim
+          {t("favoritesTitle")}
         </Typography>
 
         {favorites.length === 0 ? (
-          <Typography sx={{ color: "#fff" }}>Hiç favori ürün yok.</Typography>
+          <Typography sx={{ color: "#fff" }}>{t("noFavorites")}</Typography>
         ) : (
           <Grid container spacing={3}>
             {favorites.map((product: Product) => (

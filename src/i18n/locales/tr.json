@@ -12,6 +12,8 @@
   "max": "Max",
   "addToCart": "Sepete Ekle",
   "addedToCart": "Sepete Eklendi",
+  "favoritesTitle": "Favorilerim",
+  "noFavorites": "Hiç favori ürün yok.",
   "filter": "Filtrele",
   "categories": {
     "all": "Tümü",

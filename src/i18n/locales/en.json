@@ -11,6 +11,8 @@
   "min": "Min",
   "max": "Max",
   "addToCart": "Add to Cart",
+  "favoritesTitle": "My Favorites",
+  "noFavorites": "You have no favorite products.",
   "addedToCart": "Added to Cart",
   "filter": "Filter",
   "categories": {
