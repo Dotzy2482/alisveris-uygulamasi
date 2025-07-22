@@ -33,7 +33,7 @@ const ProductCard: React.FC<Props> = ({ product, onAddToCart }) => {
       sx={{
         width: 250,
         borderRadius: "20px",
-        backgroundColor: "rgba(254, 238, 239, 0.6)",
+        backgroundColor: "rgba(254, 238, 239, 0.4)",
         color: "#000000",
         boxShadow: "0 4px 12px rgba(0, 0, 0, 0.08)",
         position: "relative",
