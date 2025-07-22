@@ -152,8 +152,9 @@ const CartPage = () => {
                       sx={{
                         width: 48,
                         height: 48,
-                        objectFit: "cover",
+                        objectFit: "contain",
                         borderRadius: "8px",
+                        padding: "4px",
                         mr: 2,
                       }}
                     />

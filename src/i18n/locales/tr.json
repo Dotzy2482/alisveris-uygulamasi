@@ -32,10 +32,10 @@
   "loginError": "Kullanıcı adı ve şifre gereklidir.",
   "categories": {
     "all": "Tümü",
-    "clothing": "Giyim",
-    "electronics": "Elektronik",
-    "accessories": "Aksesuar",
-    "home": "Ev",
-    "book": "Kitap"
+    "clothing": "yaratıcılık",
+    "electronics": "günlük işler",
+    "accessories": "kamera kullanımı",
+    "home": "sportif",
+    "book": "iş kullanımı"
   }
 }

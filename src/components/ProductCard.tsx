@@ -33,7 +33,7 @@ const ProductCard: React.FC<Props> = ({ product, onAddToCart }) => {
       sx={{
         width: 250,
         borderRadius: "20px",
-        backgroundColor: "#feeeef",
+        backgroundColor: "rgba(254, 238, 239, 0.6)",
         color: "#000000",
         boxShadow: "0 4px 12px rgba(0, 0, 0, 0.08)",
         position: "relative",
@@ -47,10 +47,14 @@ const ProductCard: React.FC<Props> = ({ product, onAddToCart }) => {
 
       <CardMedia
         component="img"
-        height="140"
         image={product.image}
         alt={product.name}
-        sx={{ objectFit: "cover" }}
+        sx={{
+          height: 180,
+          width: "100%",
+          objectFit: "contain",
+          padding: 1,
+        }}
       />
 
       <CardContent>

@@ -32,10 +32,10 @@
   "loginError": "Username and password are required.",
   "categories": {
     "all": "All",
-    "clothing": "Clothing",
-    "electronics": "Electronics",
-    "accessories": "Accessories",
-    "home": "Home",
-    "book": "Book"
+    "clothing": "productivity",
+    "electronics": "daily use",
+    "accessories": "camera use",
+    "home": "sports use",
+    "book": "business"
   }
 }

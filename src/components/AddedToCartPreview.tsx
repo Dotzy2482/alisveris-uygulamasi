@@ -1,5 +1,5 @@
 import React, { useEffect } from "react";
-import { Box, Typography, Avatar, Fade } from "@mui/material";
+import { Box, Typography, Fade } from "@mui/material";
 import { Product } from "../utils/products";
 import { useTranslation } from "react-i18next";
 
@@ -11,6 +11,7 @@ interface Props {
 
 const AddedToCartPreview: React.FC<Props> = ({ visible, items, onClose }) => {
   const { t } = useTranslation();
+
   useEffect(() => {
     if (visible) {
       const timer = setTimeout(() => {
@@ -43,9 +44,22 @@ const AddedToCartPreview: React.FC<Props> = ({ visible, items, onClose }) => {
         <Typography variant="subtitle1" sx={{ mb: 1, fontWeight: "bold" }}>
           {t("addedToCart")}
         </Typography>
+
         {items.map((item) => (
           <Box key={item.id} display="flex" alignItems="center" mb={1}>
-            <Avatar src={item.image} sx={{ width: 32, height: 32, mr: 1 }} />
+            <Box
+              component="img"
+              src={item.image}
+              alt={item.name}
+              sx={{
+                width: 40,
+                height: 40,
+                objectFit: "contain",
+                mr: 1,
+                borderRadius: "6px",
+                backgroundColor: "#fff",
+              }}
+            />
             <Box>
               <Typography variant="body2">{item.name}</Typography>
               <Typography variant="caption">{item.price} ₺</Typography>
