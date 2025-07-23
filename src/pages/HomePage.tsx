@@ -5,6 +5,7 @@ import ProductCard from "../components/ProductCard";
 import FilterSidebar from "../components/FilterSidebar";
 import { useCart } from "../context/CartContext";
 import AddedToCartPreview from "../components/AddedToCartPreview";
+import Footer from "../components/Footer";
 
 import * as THREE from "three";
 import FOG from "vanta/dist/vanta.fog.min";
@@ -110,6 +111,8 @@ const HomePage = () => {
         items={recentlyAdded}
         onClose={() => setPreviewVisible(false)}
       />
+
+      <Footer />
     </>
   );
 };

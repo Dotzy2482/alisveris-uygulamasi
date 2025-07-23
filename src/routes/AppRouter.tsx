@@ -5,6 +5,7 @@ import HomePage from "../pages/HomePage";
 import Header from "../components/Header";
 import CartPage from "../pages/CartPage";
 import FavoritesPage from "../pages/FavoritesPage";
+import AboutPage from "../pages/AboutPage";
 
 const AppRouter = () => {
   const location = useLocation();
@@ -18,6 +19,7 @@ const AppRouter = () => {
         <Route path="/login" element={<LoginPage />} />
         <Route path="/cart" element={<CartPage />} />
         <Route path="/favorites" element={<FavoritesPage />} />
+        <Route path="/about" element={<AboutPage />} />
       </Routes>
     </>
   );
