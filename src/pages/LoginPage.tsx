@@ -17,8 +17,11 @@ import { useNavigate } from "react-router-dom";
 import * as THREE from "three";
 import FOG from "vanta/dist/vanta.fog.min";
 import { useTranslation } from "react-i18next";
+import { login } from "../services/authService";
+import RegisterModal from "../components/RegisterModal";
 
 const LoginPage = () => {
+  const [registerOpen, setRegisterOpen] = useState(false);
   const [userName, setUserName] = useState("");
   const [password, setPassword] = useState("");
   const [showPassword, setShowPassword] = useState(false);
@@ -58,10 +61,23 @@ const LoginPage = () => {
     };
   }, []);
 
-  const handleLogin = () => {
+  const handleLogin = async () => {
     if (userName.trim() && password.trim()) {
-      localStorage.setItem("userName", userName);
-      navigate("/");
+      try {
+        const token = await login(userName, password);
+        localStorage.setItem("token", token);
+        localStorage.setItem("userName", userName);
+
+        if (rememberMe) {
+          localStorage.setItem("rememberMe", "true");
+        } else {
+          localStorage.removeItem("rememberMe");
+        }
+
+        navigate("/");
+      } catch (err) {
+        setError(true);
+      }
     } else {
       setError(true);
     }
@@ -146,6 +162,7 @@ const LoginPage = () => {
             `,
           }}
         >
+
           <Typography variant="h5" mb={3} textAlign="center" sx={{ color: "white" }}>
             {t("login")}
           </Typography>
@@ -259,6 +276,34 @@ const LoginPage = () => {
           >
             {t("loginButton")}
           </Button>
+
+          
+
+          <Button
+            fullWidth
+            sx={{
+              mt: 2,
+              background: "rgba(255, 255, 255, 0.15)",
+              color: "#fff",
+              textTransform: "none",
+              fontWeight: 500,
+              border: "1px solid rgba(255, 255, 255, 0.3)",
+              backdropFilter: "blur(12px)",
+              WebkitBackdropFilter: "blur(12px)",
+              boxShadow: "0 4px 20px rgba(255, 255, 255, 0.1)",
+              textShadow: "0 1px 2px rgba(0, 0, 0, 0.3)",
+              '&:hover': {
+                background: "rgba(255, 255, 255, 0.25)",
+                boxShadow: "0 6px 30px rgba(255, 255, 255, 0.2)",
+                transform: "scale(1.02)",
+              },
+            }}
+            onClick={() => setRegisterOpen(true)}
+          >
+            {t("register")}
+          </Button>
+          <RegisterModal open={registerOpen} onClose={() => setRegisterOpen(false)} />
+            
         </Paper>
       </Box>
 
