@@ -1,0 +1,24 @@
+{
+  "files": {
+    "main.js": "/alisveris-uygulamasi/static/js/main.61c03b4f.js",
+    "static/media/airpodmax.png": "/alisveris-uygulamasi/static/media/airpodmax.de779b490e263b0dc6d8.png",
+    "static/media/iphone12.png": "/alisveris-uygulamasi/static/media/iphone12.a54fff52516694f36440.png",
+    "static/media/applewatchult.png": "/alisveris-uygulamasi/static/media/applewatchult.2c88710f4faa826ef3b5.png",
+    "static/media/iphone11.png": "/alisveris-uygulamasi/static/media/iphone11.6cb50c2a81aab5dc1092.png",
+    "static/media/applewatch.png": "/alisveris-uygulamasi/static/media/applewatch.e18e646c24fea81e08c2.png",
+    "static/media/iphone16promax.png": "/alisveris-uygulamasi/static/media/iphone16promax.05e986ecf8d1309f3e48.png",
+    "static/media/airpodspro.png": "/alisveris-uygulamasi/static/media/airpodspro.dff2b38a27e02e9f8d2a.png",
+    "static/media/iphone13.png": "/alisveris-uygulamasi/static/media/iphone13.6b42863128967e1159c7.png",
+    "static/media/iphone15.png": "/alisveris-uygulamasi/static/media/iphone15.db4ade6d3199fff41c82.png",
+    "static/media/iphone16.png": "/alisveris-uygulamasi/static/media/iphone16.1af9a7e6a46f5ca01876.png",
+    "static/media/macbookair.png": "/alisveris-uygulamasi/static/media/macbookair.2ecc81b8a949e3c5b0dd.png",
+    "static/media/iphonexr.png": "/alisveris-uygulamasi/static/media/iphonexr.3141a058a44e5d3b5b8a.png",
+    "index.html": "/alisveris-uygulamasi/index.html",
+    "static/media/en.svg": "/alisveris-uygulamasi/static/media/en.eef9ebe89f5c1a5dcf658f338ef1edce.svg",
+    "static/media/tr.svg": "/alisveris-uygulamasi/static/media/tr.dc81608397d6e16afbc184bf9519d1f0.svg",
+    "main.61c03b4f.js.map": "/alisveris-uygulamasi/static/js/main.61c03b4f.js.map"
+  },
+  "entrypoints": [
+    "static/js/main.61c03b4f.js"
+  ]
+}
