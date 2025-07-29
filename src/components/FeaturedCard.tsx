@@ -6,9 +6,10 @@ interface FeaturedCardProps {
   title: string;
   description: string;
   buttonLabel: string;
+  onClick?: () => void;
 }
 
-const FeaturedCard: React.FC<FeaturedCardProps> = ({ image, title, description, buttonLabel }) => (
+const FeaturedCard: React.FC<FeaturedCardProps> = ({ image, title, description, buttonLabel, onClick }) => (
   <Paper
     elevation={3}
     sx={{
@@ -33,6 +34,7 @@ const FeaturedCard: React.FC<FeaturedCardProps> = ({ image, title, description, 
     <Typography variant="body2" textAlign="center" sx={{ mb: 2 }}>{description}</Typography>
     <Button
       variant="contained"
+      onClick={onClick}
       sx={{
         backgroundColor: "#ff4d4f",
         color: "#fff",

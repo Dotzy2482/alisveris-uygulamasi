@@ -3,6 +3,7 @@ import { Box, Grid, Typography } from "@mui/material";
 import * as THREE from "three";
 import FOG from "vanta/dist/vanta.fog.min";
 import { useTranslation } from "react-i18next";
+import { useNavigate } from "react-router-dom";
 
 import Footer from "../components/Footer";
 import FeaturedCard from "../components/FeaturedCard";
@@ -23,6 +24,7 @@ const BundlesPage = () => {
   const { t } = useTranslation();
   const vantaRef = useRef<HTMLDivElement>(null);
   const vantaEffect = useRef<any>(null);
+  const navigate = useNavigate();
 
   useEffect(() => {
     if (!vantaEffect.current && vantaRef.current) {
@@ -50,18 +52,21 @@ const BundlesPage = () => {
       description: t("bundles.featured1.description"),
       image: iphonebun,
       buttonLabel: t("bundles.featured1.button"),
+      onClick: () => navigate("/"),
     },
     {
       title: t("bundles.featured2.title"),
       description: t("bundles.featured2.description"),
       image: airpodmaxbun,
       buttonLabel: t("bundles.featured2.button"),
+      onClick: () => navigate("/"),
     },
     {
       title: t("bundles.featured3.title"),
       description: t("bundles.featured3.description"),
       image: macbun,
       buttonLabel: t("bundles.featured3.button"),
+      onClick: () => navigate("/"),
     },
   ];
 
@@ -71,18 +76,21 @@ const BundlesPage = () => {
       description: t("bundles.moreFeatured1.description"),
       image: ipadbun,
       buttonLabel: t("bundles.moreFeatured1.button"),
+      onClick: () => navigate("/"),
     },
     {
       title: t("bundles.moreFeatured2.title"),
       description: t("bundles.moreFeatured2.description"),
       image: appletvbun,
       buttonLabel: t("bundles.moreFeatured2.button"),
+      onClick: () => navigate("/"),
     },
     {
       title: t("bundles.moreFeatured3.title"),
       description: t("bundles.moreFeatured3.description"),
       image: applewatchbun,
       buttonLabel: t("bundles.moreFeatured3.button"),
+      onClick: () => navigate("/"),
     },
   ];
 
@@ -92,12 +100,14 @@ const BundlesPage = () => {
       description: t("bundles.promo1.description"),
       image: cordonbun,
       buttonLabel: t("bundles.promo1.button"),
+      onClick: () => navigate("/"),
     },
     {
       title: t("bundles.promo2.title"),
       description: t("bundles.promo2.description"),
       image: iphone16bun,
       buttonLabel: t("bundles.promo2.button"),
+      onClick: () => navigate("/"),
     },
   ];
 
@@ -107,12 +117,14 @@ const BundlesPage = () => {
       description: t("bundles.morePromo1.description"),
       image: airtagbun,
       buttonLabel: t("bundles.morePromo1.button"),
+      onClick: () => navigate("/"),
     },
     {
       title: t("bundles.morePromo2.title"),
       description: t("bundles.morePromo2.description"),
       image: applepenbun,
       buttonLabel: t("bundles.morePromo2.button"),
+      onClick: () => navigate("/"),
     },
   ];
 

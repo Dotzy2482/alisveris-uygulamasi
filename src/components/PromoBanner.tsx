@@ -6,9 +6,10 @@ interface PromoBannerProps {
   title: string;
   description: string;
   buttonLabel: string;
+  onClick?: () => void;
 }
 
-const PromoBanner: React.FC<PromoBannerProps> = ({ image, title, description, buttonLabel }) => (
+const PromoBanner: React.FC<PromoBannerProps> = ({ image, title, description, buttonLabel, onClick }) => (
   <Paper
     elevation={3}
     sx={{
@@ -33,6 +34,7 @@ const PromoBanner: React.FC<PromoBannerProps> = ({ image, title, description, bu
     <Typography variant="body1" textAlign="center" sx={{ mb: 2 }}>{description}</Typography>
     <Button
       variant="contained"
+      onClick={onClick}
       sx={{
         backgroundColor: "#ff4d4f",
         color: "#fff",
