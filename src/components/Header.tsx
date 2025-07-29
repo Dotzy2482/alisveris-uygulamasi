@@ -65,6 +65,10 @@ const Header = () => {
            <Link to="/about" style={{ textDecoration: "none" }}>
               <Button sx={{ color: "#fff", textTransform: "none" }}>{t("about")}</Button>
             </Link>
+
+          <Link to="/deneme-home" style={{ textDecoration: "none" }}>
+            <Button sx={{ color: "#fff", textTransform: "none" }}>Deneme</Button>
+          </Link>
         </Box>
 
         {/* Sağ Baloncuk */}

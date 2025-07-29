@@ -7,7 +7,7 @@ import { FavoritesProvider } from "./context/FavoritesContext";
 
 function App() {
   return (
-    <BrowserRouter>
+    <BrowserRouter basename={process.env.PUBLIC_URL}>
       <UserProvider>
         <CartProvider>
           <FavoritesProvider>

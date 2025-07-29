@@ -61,7 +61,7 @@ const FavoritesPage = () => {
         ) : (
           <Grid container spacing={3}>
             {favorites.map((product: Product) => (
-              <Grid item xs={12} sm={6} md={4} lg={3} key={product.id}>
+              <Grid item xs={12} sm={6} md={4} lg={2} key={product.id} sx={{ mb: 3 }}>
                 <ProductCard product={product} onAddToCart={() => {}} />
               </Grid>
             ))}
