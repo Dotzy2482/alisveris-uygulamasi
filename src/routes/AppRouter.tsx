@@ -6,7 +6,7 @@ import Header from "../components/Header";
 import CartPage from "../pages/CartPage";
 import FavoritesPage from "../pages/FavoritesPage";
 import AboutPage from "../pages/AboutPage";
-import Bundels from "../pages/bundelspage";
+import Bundles from "../pages/BundlePage";
 
 const AppRouter = () => {
   const location = useLocation();
@@ -21,7 +21,7 @@ const AppRouter = () => {
         <Route path="/cart" element={<CartPage />} />
         <Route path="/favorites" element={<FavoritesPage />} />
         <Route path="/about" element={<AboutPage />} />
-        <Route path="/BundelsPage" element={<Bundels />} />
+        <Route path="/BundelsPage" element={<Bundles />} />
       </Routes>
     </>
   );
