@@ -2,21 +2,25 @@ import React, { useEffect, useRef } from "react";
 import { Box, Grid, Typography } from "@mui/material";
 import * as THREE from "three";
 import FOG from "vanta/dist/vanta.fog.min";
+import { useTranslation } from "react-i18next";
+
 import Footer from "../components/Footer";
 import FeaturedCard from "../components/FeaturedCard";
 import PromoBanner from "../components/PromoBanner";
-import ipadbun from "../assets/products/ipadbun.png";
-import airpodmaxbun from "../assets/products/airpodmaxbun.png"
-import iphonebun from "../assets/products/iphonebun.png"
-import applewatchbun from "../assets/products/applewatchbun.png"
-import macbun from "../assets/products/macbun.png"
-import appletvbun from "../assets/products/appletvbun.png"
-import applepenbun from "../assets/products/applepenbun.png"
-import airtagbun from "../assets/products/airtagbun.png"
-import cordonbun from "../assets/products/cordonbun.png"
-import iphone16bun from "../assets/products/iphone16bun.png"
 
-const DenemeHomePage = () => {
+import ipadbun from "../assets/products/ipadbun.png";
+import airpodmaxbun from "../assets/products/airpodmaxbun.png";
+import iphonebun from "../assets/products/iphonebun.png";
+import applewatchbun from "../assets/products/applewatchbun.png";
+import macbun from "../assets/products/macbun.png";
+import appletvbun from "../assets/products/appletvbun.png";
+import applepenbun from "../assets/products/applepenbun.png";
+import airtagbun from "../assets/products/airtagbun.png";
+import cordonbun from "../assets/products/cordonbun.png";
+import iphone16bun from "../assets/products/iphone16bun.png";
+
+const BundlesPage = () => {
+  const { t } = useTranslation();
   const vantaRef = useRef<HTMLDivElement>(null);
   const vantaEffect = useRef<any>(null);
 
@@ -42,73 +46,73 @@ const DenemeHomePage = () => {
 
   const featuredItems = [
     {
-      title: "Yeni Sezon Apple Ürünleri",
-      description: "En son Iphone modelleri ve Apple Watch'lar şimdi özel indirimlerle!",
+      title: t("bundles.featured1.title"),
+      description: t("bundles.featured1.description"),
       image: iphonebun,
-      buttonLabel: "Alışverişe Başla",
+      buttonLabel: t("bundles.featured1.button"),
     },
     {
-      title: "Kulaklık Kampanyası",
-      description: "AirPods ve diğer kulaklıklarda büyük indirim!",
+      title: t("bundles.featured2.title"),
+      description: t("bundles.featured2.description"),
       image: airpodmaxbun,
-      buttonLabel: "Fırsatları Gör",
+      buttonLabel: t("bundles.featured2.button"),
     },
     {
-      title: "MacBook Günleri",
-      description: "Yüksek performans, cam gibi ekranlar. Şimdi keşfet!",
+      title: t("bundles.featured3.title"),
+      description: t("bundles.featured3.description"),
       image: macbun,
-      buttonLabel: "Detaylı İncele",
+      buttonLabel: t("bundles.featured3.button"),
     },
   ];
 
   const moreFeaturedItems = [
     {
-      title: "iPad İndirimi",
-      description: "Yeni nesil iPad'lerde kaçırılmayacak fırsatlar!",
+      title: t("bundles.moreFeatured1.title"),
+      description: t("bundles.moreFeatured1.description"),
       image: ipadbun,
-      buttonLabel: "İncele",
+      buttonLabel: t("bundles.moreFeatured1.button"),
     },
     {
-      title: "Apple TV Fırsatları",
-      description: "Eğlenceyi evinize getirin. Şimdi uygun fiyatla!",
+      title: t("bundles.moreFeatured2.title"),
+      description: t("bundles.moreFeatured2.description"),
       image: appletvbun,
-      buttonLabel: "Hemen Al",
+      buttonLabel: t("bundles.moreFeatured2.button"),
     },
     {
-      title: "Watch Serisi",
-      description: "Apple Watch'larda kampanya zamanı!",
+      title: t("bundles.moreFeatured3.title"),
+      description: t("bundles.moreFeatured3.description"),
       image: applewatchbun,
-      buttonLabel: "Keşfet",
+      buttonLabel: t("bundles.moreFeatured3.button"),
     },
   ];
 
   const promoBanners = [
     {
-      title: "cordon bundle",
-      description: "Apple Watch'lara bir alana bir bedava saat kordonu.",
+      title: t("bundles.promo1.title"),
+      description: t("bundles.promo1.description"),
       image: cordonbun,
-      buttonLabel: "Detayları Gör",
+      buttonLabel: t("bundles.promo1.button"),
     },
     {
-      title: "Iphone 16 alana 12 ay apple arcade bedava",
-      description: "Iphone 16 alan her mmüşterimiz apple arcade deki oyunların tadına varabilecek.",
+      title: t("bundles.promo2.title"),
+      description: t("bundles.promo2.description"),
       image: iphone16bun,
-      buttonLabel: "Detayları Gör",
+      buttonLabel: t("bundles.promo2.button"),
     },
   ];
 
   const morePromoBanners = [
     {
-      title: "Yaz İndirimi",
-      description: "Seçili ürünlerde %30’a varan indirim!",
+      title: t("bundles.morePromo1.title"),
+      description: t("bundles.morePromo1.description"),
       image: airtagbun,
-      buttonLabel: "Fırsatları Gör",
+      buttonLabel: t("bundles.morePromo1.button"),
     },
     {
-      title: "Kargo Bedava Kampanyası",
-      description: "Bugün verilen siparişlerde ücretsiz kargo!",
+      title: t("bundles.morePromo2.title"),
+      description: t("bundles.morePromo2.description"),
       image: applepenbun,
-      buttonLabel: "Şimdi Sipariş Ver",
+      buttonLabel: t("bundles.morePromo2.button"),
     },
   ];
 
@@ -128,11 +132,10 @@ const DenemeHomePage = () => {
 
       <Box sx={{ p: 5 }}>
         <Typography variant="h4" sx={{ color: "#fff", mb: 4, textAlign: "center" }}>
-          Öne Çıkan Kampanyalar
+          {t("bundles.sectionTitle")}
         </Typography>
 
-        
-        <Grid container spacing={4} justifyContent="center" >
+        <Grid container spacing={4} justifyContent="center">
           {featuredItems.map((item, idx) => (
             <Grid item xs={12} md={6} lg={4} key={`featured-${idx}`}>
               <FeaturedCard {...item} />
@@ -140,7 +143,6 @@ const DenemeHomePage = () => {
           ))}
         </Grid>
 
-        
         <Grid container spacing={4} justifyContent="center" sx={{ mt: 3 }}>
           {promoBanners.map((item, idx) => (
             <Grid item xs={12} md={6} key={`promo-${idx}`}>
@@ -149,7 +151,6 @@ const DenemeHomePage = () => {
           ))}
         </Grid>
 
-        
         <Grid container spacing={4} justifyContent="center" sx={{ mt: 3 }}>
           {moreFeaturedItems.map((item, idx) => (
             <Grid item xs={12} md={6} lg={4} key={`featured-extra-${idx}`}>
@@ -158,7 +159,6 @@ const DenemeHomePage = () => {
           ))}
         </Grid>
 
-        
         <Grid container spacing={4} justifyContent="center" sx={{ mt: 3 }}>
           {morePromoBanners.map((item, idx) => (
             <Grid item xs={12} md={6} key={`promo-extra-${idx}`}>
@@ -173,4 +173,4 @@ const DenemeHomePage = () => {
   );
 };
 
-export default DenemeHomePage;
+export default BundlesPage;

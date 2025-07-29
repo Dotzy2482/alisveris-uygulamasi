@@ -41,5 +41,64 @@
     "accessories": "camera use",
     "home": "sports use",
     "book": "business"
+  },
+  
+  "bundles": {
+  "sectionTitle": "Featured Promotions",
+
+  "featured1": {
+    "title": "New Season Apple Products",
+    "description": "The latest iPhones and Apple Watches now with special discounts!",
+    "button": "Start Shopping"
+  },
+  "featured2": {
+    "title": "Headphone Deals",
+    "description": "Big discounts on AirPods and other headphones!",
+    "button": "See Deals"
+  },
+  "featured3": {
+    "title": "MacBook Days",
+    "description": "High performance, crystal-clear displays. Explore now!",
+    "button": "View Details"
+  },
+
+  "moreFeatured1": {
+    "title": "iPad Discounts",
+    "description": "Unmissable deals on the next-gen iPads!",
+    "button": "Browse"
+  },
+  "moreFeatured2": {
+    "title": "Apple TV Offers",
+    "description": "Bring entertainment home. Now at great prices!",
+    "button": "Buy Now"
+  },
+  "moreFeatured3": {
+    "title": "Watch Series",
+    "description": "It's campaign time for Apple Watches!",
+    "button": "Discover"
+  },
+
+  "promo1": {
+    "title": "Cordon Bundle",
+    "description": "Buy one Apple Watch, get a free wrist strap!",
+    "button": "See Details"
+  },
+  "promo2": {
+    "title": "Free Apple Arcade with iPhone 16",
+    "description": "Enjoy 12 months of Apple Arcade with every iPhone 16 purchase.",
+    "button": "See Details"
+  },
+
+  "morePromo1": {
+    "title": "Summer Sale",
+    "description": "Up to 30% off on selected products!",
+    "button": "See Offers"
+  },
+  "morePromo2": {
+    "title": "Free Shipping Campaign",
+    "description": "Free shipping on all orders placed today!",
+    "button": "Order Now"
   }
+}
+
 }

@@ -41,5 +41,65 @@
     "accessories": "kamera kullanımı",
     "home": "sportif",
     "book": "iş kullanımı"
+  },
+  
+  "bundles": {
+  "sectionTitle": "Öne Çıkan Kampanyalar",
+
+  "featured1": {
+    "title": "Yeni Sezon Apple Ürünleri",
+    "description": "En son Iphone modelleri ve Apple Watch'lar şimdi özel indirimlerle!",
+    "button": "Alışverişe Başla"
+  },
+  "featured2": {
+    "title": "Kulaklık Kampanyası",
+    "description": "AirPods ve diğer kulaklıklarda büyük indirim!",
+    "button": "Fırsatları Gör"
+  },
+  "featured3": {
+    "title": "MacBook Günleri",
+    "description": "Yüksek performans, cam gibi ekranlar. Şimdi keşfet!",
+    "button": "Detaylı İncele"
+  },
+
+  "moreFeatured1": {
+    "title": "iPad İndirimi",
+    "description": "Yeni nesil iPad'lerde kaçırılmayacak fırsatlar!",
+    "button": "İncele"
+  },
+  "moreFeatured2": {
+    "title": "Apple TV Fırsatları",
+    "description": "Eğlenceyi evinize getirin. Şimdi uygun fiyatla!",
+    "button": "Hemen Al"
+  },
+  "moreFeatured3": {
+    "title": "Watch Serisi",
+    "description": "Apple Watch'larda kampanya zamanı!",
+    "button": "Keşfet"
+  },
+
+  "promo1": {
+    "title": "Kordon Bundle",
+    "description": "Apple Watch'lara bir alana bir bedava saat kordonu.",
+    "button": "Detayları Gör"
+  },
+  "promo2": {
+    "title": "Iphone 16 ile Apple Arcade",
+    "description": "Iphone 16 alan her müşterimiz Apple Arcade'deki oyunların tadına varabilecek.",
+    "button": "Detayları Gör"
+  },
+
+  "morePromo1": {
+    "title": "Yaz İndirimi",
+    "description": "Seçili ürünlerde %30’a varan indirim!",
+    "button": "Fırsatları Gör"
+  },
+  "morePromo2": {
+    "title": "Kargo Bedava Kampanyası",
+    "description": "Bugün verilen siparişlerde ücretsiz kargo!",
+    "button": "Şimdi Sipariş Ver"
   }
+}
+
+  
 }
