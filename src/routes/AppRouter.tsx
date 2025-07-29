@@ -6,7 +6,7 @@ import Header from "../components/Header";
 import CartPage from "../pages/CartPage";
 import FavoritesPage from "../pages/FavoritesPage";
 import AboutPage from "../pages/AboutPage";
-import DenemeHomePage from "../pages/DenemeHomePage";
+import Bundles from "../pages/bundlespage";
 
 const AppRouter = () => {
   const location = useLocation();
@@ -21,7 +21,7 @@ const AppRouter = () => {
         <Route path="/cart" element={<CartPage />} />
         <Route path="/favorites" element={<FavoritesPage />} />
         <Route path="/about" element={<AboutPage />} />
-        <Route path="/deneme-home" element={<DenemeHomePage />} />
+        <Route path="/BundlesPage" element={<Bundles />} />
       </Routes>
     </>
   );

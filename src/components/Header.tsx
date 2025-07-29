@@ -66,8 +66,8 @@ const Header = () => {
               <Button sx={{ color: "#fff", textTransform: "none" }}>{t("about")}</Button>
             </Link>
 
-          <Link to="/deneme-home" style={{ textDecoration: "none" }}>
-            <Button sx={{ color: "#fff", textTransform: "none" }}>Deneme</Button>
+          <Link to="/BundlesPage" style={{ textDecoration: "none" }}>
+            <Button sx={{ color: "#fff", textTransform: "none" }}>kampanya</Button>
           </Link>
         </Box>
 
