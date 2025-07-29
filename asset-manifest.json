@@ -1,6 +1,6 @@
 {
   "files": {
-    "main.js": "/alisveris-uygulamasi/static/js/main.de9dcf2c.js",
+    "main.js": "/alisveris-uygulamasi/static/js/main.02bb7b3a.js",
     "static/media/airpodmax.png": "/alisveris-uygulamasi/static/media/airpodmax.de779b490e263b0dc6d8.png",
     "static/media/macbun.png": "/alisveris-uygulamasi/static/media/macbun.25e9a1f00625e6c41ea1.png",
     "static/media/applewatchbun.png": "/alisveris-uygulamasi/static/media/applewatchbun.2770479bf7bb706d7d46.png",
@@ -26,9 +26,9 @@
     "index.html": "/alisveris-uygulamasi/index.html",
     "static/media/en.svg": "/alisveris-uygulamasi/static/media/en.eef9ebe89f5c1a5dcf658f338ef1edce.svg",
     "static/media/tr.svg": "/alisveris-uygulamasi/static/media/tr.dc81608397d6e16afbc184bf9519d1f0.svg",
-    "main.de9dcf2c.js.map": "/alisveris-uygulamasi/static/js/main.de9dcf2c.js.map"
+    "main.02bb7b3a.js.map": "/alisveris-uygulamasi/static/js/main.02bb7b3a.js.map"
   },
   "entrypoints": [
-    "static/js/main.de9dcf2c.js"
+    "static/js/main.02bb7b3a.js"
   ]
 }
