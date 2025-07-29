@@ -1,7 +1,9 @@
-import React, { useEffect, useRef } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import { useFavorites } from "../context/FavoritesContext";
+import { useCart } from "../context/CartContext";
 import { Grid, Typography, Box } from "@mui/material";
 import ProductCard from "../components/ProductCard";
+import AddedToCartPreview from "../components/AddedToCartPreview";
 import { Product } from "../utils/products";
 import * as THREE from "three";
 import FOG from "vanta/dist/vanta.fog.min";
@@ -9,10 +11,20 @@ import { useTranslation } from "react-i18next";
 
 const FavoritesPage = () => {
   const { favorites } = useFavorites();
+  const { addToCart } = useCart();
   const { t } = useTranslation();
 
   const vantaRef = useRef<HTMLDivElement>(null);
   const vantaEffect = useRef<any>(null);
+
+  const [previewVisible, setPreviewVisible] = useState(false);
+  const [recentlyAdded, setRecentlyAdded] = useState<Product[]>([]);
+
+  const handleAddToCart = (product: Product) => {
+    addToCart(product);
+    setRecentlyAdded([product]);
+    setPreviewVisible(true);
+  };
 
   useEffect(() => {
     if (!vantaEffect.current && vantaRef.current) {
@@ -50,7 +62,7 @@ const FavoritesPage = () => {
         }}
       />
 
-      {/* İçerik */}
+      
       <Box sx={{ px: "65px", pt: 6 }}>
         <Typography variant="h4" gutterBottom sx={{ color: "#fff" }}>
           {t("favoritesTitle")}
@@ -62,12 +74,18 @@ const FavoritesPage = () => {
           <Grid container spacing={3}>
             {favorites.map((product: Product) => (
               <Grid item xs={12} sm={6} md={4} lg={2} key={product.id} sx={{ mb: 3 }}>
-                <ProductCard product={product} onAddToCart={() => {}} />
+                <ProductCard product={product} onAddToCart={handleAddToCart} />
               </Grid>
             ))}
           </Grid>
         )}
       </Box>
+
+      <AddedToCartPreview
+        visible={previewVisible}
+        items={recentlyAdded}
+        onClose={() => setPreviewVisible(false)}
+      />
     </>
   );
 };
