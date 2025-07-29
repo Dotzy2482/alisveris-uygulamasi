@@ -58,6 +58,10 @@ const Header = () => {
             <Button sx={{ color: "#fff", textTransform: "none" }}>{t("home")}</Button>
           </Link>
 
+          <Link to="/BundelsPage" style={{ textDecoration: "none" }}>
+            <Button sx={{ color: "#fff", textTransform: "none" }}>kampanya</Button>
+          </Link>
+
           <Link to="/favorites" style={{ textDecoration: "none" }}>
             <Button sx={{ color: "#fff", textTransform: "none" }}>{t("favorites")}</Button>
           </Link>
@@ -65,10 +69,6 @@ const Header = () => {
            <Link to="/about" style={{ textDecoration: "none" }}>
               <Button sx={{ color: "#fff", textTransform: "none" }}>{t("about")}</Button>
             </Link>
-
-          <Link to="/BundelsPage" style={{ textDecoration: "none" }}>
-            <Button sx={{ color: "#fff", textTransform: "none" }}>kampanya</Button>
-          </Link>
         </Box>
 
         {/* Sağ Baloncuk */}
