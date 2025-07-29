@@ -1,8 +1,18 @@
 {
   "files": {
-    "main.js": "/alisveris-uygulamasi/static/js/main.44a1c3c2.js",
+    "main.js": "/alisveris-uygulamasi/static/js/main.de9dcf2c.js",
     "static/media/airpodmax.png": "/alisveris-uygulamasi/static/media/airpodmax.de779b490e263b0dc6d8.png",
+    "static/media/macbun.png": "/alisveris-uygulamasi/static/media/macbun.25e9a1f00625e6c41ea1.png",
+    "static/media/applewatchbun.png": "/alisveris-uygulamasi/static/media/applewatchbun.2770479bf7bb706d7d46.png",
+    "static/media/iphone16bun.png": "/alisveris-uygulamasi/static/media/iphone16bun.4d9525b628e7cf466880.png",
+    "static/media/iphonebun.png": "/alisveris-uygulamasi/static/media/iphonebun.39f75fb2cca7f45c25fd.png",
+    "static/media/ipadbun.png": "/alisveris-uygulamasi/static/media/ipadbun.224caa2b256a2bfebc8d.png",
+    "static/media/appletvbun.png": "/alisveris-uygulamasi/static/media/appletvbun.590bc97dd34b0d97ef8e.png",
+    "static/media/cordonbun.png": "/alisveris-uygulamasi/static/media/cordonbun.9dfcc89275613fe1deb3.png",
+    "static/media/airpodmaxbun.png": "/alisveris-uygulamasi/static/media/airpodmaxbun.b5833c947acb36951e09.png",
     "static/media/iphone12.png": "/alisveris-uygulamasi/static/media/iphone12.a54fff52516694f36440.png",
+    "static/media/airtagbun.png": "/alisveris-uygulamasi/static/media/airtagbun.4ccd05c25ac9ac4e8513.png",
+    "static/media/applepenbun.png": "/alisveris-uygulamasi/static/media/applepenbun.4b5b23c4824ce8fd74f1.png",
     "static/media/applewatchult.png": "/alisveris-uygulamasi/static/media/applewatchult.2c88710f4faa826ef3b5.png",
     "static/media/iphone11.png": "/alisveris-uygulamasi/static/media/iphone11.6cb50c2a81aab5dc1092.png",
     "static/media/applewatch.png": "/alisveris-uygulamasi/static/media/applewatch.e18e646c24fea81e08c2.png",
@@ -16,9 +26,9 @@
     "index.html": "/alisveris-uygulamasi/index.html",
     "static/media/en.svg": "/alisveris-uygulamasi/static/media/en.eef9ebe89f5c1a5dcf658f338ef1edce.svg",
     "static/media/tr.svg": "/alisveris-uygulamasi/static/media/tr.dc81608397d6e16afbc184bf9519d1f0.svg",
-    "main.44a1c3c2.js.map": "/alisveris-uygulamasi/static/js/main.44a1c3c2.js.map"
+    "main.de9dcf2c.js.map": "/alisveris-uygulamasi/static/js/main.de9dcf2c.js.map"
   },
   "entrypoints": [
-    "static/js/main.44a1c3c2.js"
+    "static/js/main.de9dcf2c.js"
   ]
 }
