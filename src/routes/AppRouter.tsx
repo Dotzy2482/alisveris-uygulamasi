@@ -21,7 +21,7 @@ const AppRouter = () => {
         <Route path="/cart" element={<CartPage />} />
         <Route path="/favorites" element={<FavoritesPage />} />
         <Route path="/about" element={<AboutPage />} />
-        <Route path="/BundelsPage" element={<Bundles />} />
+        <Route path="/BundlePage" element={<Bundles />} />
       </Routes>
     </>
   );
